@@ -15,10 +15,15 @@ Rust · Tauri 2 · Svelte · Windows 10/11
 
 ### No app
 
-|                                                                   |                                                         |
-| ----------------------------------------------------------------- | ------------------------------------------------------- |
-| <img src="docs/img/app-visao-geral.png" alt="Visão geral no app"> | <img src="docs/img/app-midias.png" alt="Mídias no app"> |
-| <img src="docs/img/app-grupo-mensagens.png" alt="Grupo no app">   |                                                         |
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/app-visao-geral.png" alt="Visão geral no app" width="100%"></td>
+    <td width="50%"><img src="docs/img/app-midias.png" alt="Mídias no app" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/img/app-grupo-mensagens.png" alt="Grupo no app" width="100%"></td>
+  </tr>
+</table>
 
 ## Download
 
@@ -41,12 +46,24 @@ Uma conversa do WhatsApp é das coisas mais pessoais que alguém tem no computad
 
 ## O que ele mostra
 
-|                                                                                                                  |                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| <img src="docs/img/mensagens.png" alt="Aba Mensagens">                                                           | <img src="docs/img/horarios.png" alt="Aba Horários">                                     |
-| **Mensagens:** tempo de resposta (mediana, 75% e 90%), caracteres, links, emojis, apagadas e mensagens por tipo. | **Horários:** mapa de calor dia da semana × hora e distribuição por dia e por hora.      |
-| <img src="docs/img/audios.png" alt="Aba Áudios">                                                                 | <img src="docs/img/midias.png" alt="Aba Mídias">                                         |
-| **Áudios:** quantidade, horas gravadas e duração média por pessoa, lidas do cabeçalho de cada arquivo.           | **Mídias:** contagem e tamanho por tipo, incluindo fotos e vídeos de visualização única. |
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/mensagens.png" alt="Aba Mensagens" width="100%"></td>
+    <td width="50%"><img src="docs/img/horarios.png" alt="Aba Horários" width="100%"></td>
+  </tr>
+  <tr>
+    <td width="50%"><b>Mensagens:</b> tempo de resposta (mediana, 75% e 90%), caracteres, links, emojis, apagadas e mensagens por tipo.</td>
+    <td width="50%"><b>Horários:</b> mapa de calor dia da semana × hora e distribuição por dia e por hora.</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/img/audios.png" alt="Aba Áudios" width="100%"></td>
+    <td width="50%"><img src="docs/img/midias.png" alt="Aba Mídias" width="100%"></td>
+  </tr>
+  <tr>
+    <td width="50%"><b>Áudios:</b> quantidade, horas gravadas e duração média por pessoa, lidas do cabeçalho de cada arquivo.</td>
+    <td width="50%"><b>Mídias:</b> contagem e tamanho por tipo, incluindo fotos e vídeos de visualização única.</td>
+  </tr>
+</table>
 
 <p align="center">
   <img src="docs/img/destaques.png" alt="Aba Destaques" width="100%">
@@ -60,9 +77,12 @@ Tudo responde na hora a período (de/até e atalhos), fuso horário e filtro por
 
 Conversas em grupo funcionam do mesmo jeito: cada participante tem sua cor, os mais ativos aparecem nos cards e o restante é somado em "Demais".
 
-|                                                                     |                                                                 |
-| ------------------------------------------------------------------- | --------------------------------------------------------------- |
-| <img src="docs/img/grupo-visao-geral.png" alt="Grupo: visão geral"> | <img src="docs/img/grupo-mensagens.png" alt="Grupo: mensagens"> |
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/grupo-visao-geral.png" alt="Grupo: visão geral" width="100%"></td>
+    <td width="50%"><img src="docs/img/grupo-mensagens.png" alt="Grupo: mensagens" width="100%"></td>
+  </tr>
+</table>
 
 ### Tela inicial
 
@@ -76,10 +96,16 @@ Arraste o `.zip` exportado pelo celular (ou a pasta já extraída) para qualquer
 
 Relatório de poucas páginas gerado no próprio app, sem navegador. No modo anônimo, os nomes viram "Pessoa A" e "Pessoa B" e os nomes de arquivo somem. A última página traz a integridade da análise e o SHA-256 da conversa.
 
-|                                                     |                                                       |
-| --------------------------------------------------- | ----------------------------------------------------- |
-| <img src="docs/img/pdf-1.png" alt="PDF: resumo">    | <img src="docs/img/pdf-2.png" alt="PDF: por pessoa">  |
-| <img src="docs/img/pdf-3.png" alt="PDF: destaques"> | <img src="docs/img/pdf-4.png" alt="PDF: integridade"> |
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/pdf-1.png" alt="PDF: resumo" width="100%"></td>
+    <td width="50%"><img src="docs/img/pdf-2.png" alt="PDF: por pessoa" width="100%"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/img/pdf-3.png" alt="PDF: destaques" width="100%"></td>
+    <td width="50%"><img src="docs/img/pdf-4.png" alt="PDF: integridade" width="100%"></td>
+  </tr>
+</table>
 
 ## Desempenho
 

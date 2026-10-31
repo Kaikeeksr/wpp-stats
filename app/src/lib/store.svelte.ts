@@ -133,8 +133,11 @@ export async function pickFolder() {
 }
 
 export async function pickZip() {
-  const p = await openDialog({ title: "Conversa exportada (.zip)", filters: [{ name: "ZIP", extensions: ["zip"] }] });
-  if (typeof p === "string") openFolder(p);
+  const p = await openDialog({
+    title: "Conversa exportada (.zip ou o .txt da pasta extraída)",
+    filters: [{ name: "Conversa do WhatsApp", extensions: ["zip", "txt"] }],
+  });
+  if (typeof p === "string") openFolder(/\.txt$/i.test(p) ? p.replace(/[\\/][^\\/]+$/, "") : p);
 }
 
 export function goHome() {
