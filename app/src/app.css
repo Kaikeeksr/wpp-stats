@@ -24,7 +24,7 @@
   --r-sm: 8px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
-  font-family: "Twemoji Country Flags", "Inter Variable", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  font-family: "Twemoji Country Flags", "Inter Variable", system-ui, sans-serif;
   font-feature-settings: "cv11", "ss03";
   font-size: 13.5px;
   line-height: 1.5;

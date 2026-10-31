@@ -23,7 +23,7 @@ echarts.use([
 export { echarts };
 export type Option = EChartsCoreOption;
 
-const FONT = '"Inter Variable", "Segoe UI Variable Text", sans-serif';
+const FONT = '"Inter Variable", system-ui, sans-serif';
 
 export function ink() {
   void theme.dark;

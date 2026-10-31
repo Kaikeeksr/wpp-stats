@@ -257,7 +257,7 @@ pub fn open(dir: &Path, pool: &rayon::ThreadPool, cache: Option<&Path>) -> Resul
 }
 
 pub fn app_dir() -> Option<PathBuf> {
-    std::env::var_os("LOCALAPPDATA").map(|d| PathBuf::from(d).join("WppStats"))
+    dirs::data_local_dir().map(|d| d.join("WppStats"))
 }
 
 pub fn hex(b: &[u8]) -> String {

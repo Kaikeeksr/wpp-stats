@@ -4790,6 +4790,7 @@ dependencies = [
  "bincode",
  "bytecount",
  "csv",
+ "dirs",
  "jiff",
  "krilla",
  "memchr",

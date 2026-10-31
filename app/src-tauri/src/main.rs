@@ -45,7 +45,7 @@ fn load_config() -> serde_json::Value {
 
 #[tauri::command]
 fn save_config(config: serde_json::Value) -> Res<()> {
-    let p = config_path().ok_or("LOCALAPPDATA não definido")?;
+    let p = config_path().ok_or("pasta de dados do app indisponível")?;
     std::fs::create_dir_all(p.parent().expect("has parent")).map_err(err)?;
     let tmp = p.with_extension("tmp");
     std::fs::write(&tmp, serde_json::to_vec_pretty(&config).map_err(err)?).map_err(err)?;
@@ -89,7 +89,7 @@ async fn open_folder(app: AppHandle, path: String) -> Res<Opened> {
         let app = app.clone();
         tauri::async_runtime::spawn_blocking(move || {
             let st = app.state::<App>();
-            let root = unzip::default_dir().ok_or("LOCALAPPDATA não definido")?;
+            let root = unzip::default_dir().ok_or("pasta de dados do app indisponível")?;
             let dir =
                 unzip::folder_for(Path::new(&path), &root, &st.pool, &progress).map_err(err)?;
             let use_cache = load_config()
@@ -114,7 +114,9 @@ async fn open_folder(app: AppHandle, path: String) -> Res<Opened> {
             let shown = unzip::shown_path(Path::new(&path));
             let opened = Opened {
                 path,
-                home: std::env::var("USERPROFILE").unwrap_or_default(),
+                home: std::env::home_dir()
+                    .map(|h| h.display().to_string())
+                    .unwrap_or_default(),
                 persons: ix.persons.clone(),
                 messages,
                 first: span.map(|s| s.0),

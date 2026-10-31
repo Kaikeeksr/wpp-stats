@@ -14,13 +14,13 @@
 
   const zones = $derived.by(() => {
     const labelOf = (z: string) => app.zones.zones.find(([n]) => n === z)?.[1] ?? z;
-    const list: [string, string][] = [[app.zones.system, `${labelOf(app.zones.system)} · Windows`]];
+    const list: [string, string][] = [[app.zones.system, `${labelOf(app.zones.system)} · sistema`]];
     for (const [z, l] of app.zones.zones) list.push([z, l]);
     for (const z of app.config.recent_zones ?? []) list.push([z, z]);
     list.push([app.view.zone, labelOf(app.view.zone)]);
     return list.filter(([z], i) => list.findIndex(([x]) => x === z) === i);
   });
-  const zoneLabel = $derived(zones.find(([z]) => z === app.view.zone)?.[1].replace(" · Windows", "") ?? app.view.zone);
+  const zoneLabel = $derived(zones.find(([z]) => z === app.view.zone)?.[1].replace(" · sistema", "") ?? app.view.zone);
 </script>
 
 <div class="filters">

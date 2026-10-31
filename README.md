@@ -5,7 +5,7 @@
 **Estatísticas de uma conversa exportada do WhatsApp, calculadas no seu computador.**
 Sem internet, sem login, sem banco de dados. O app mede a conversa, não lê.
 
-Rust · Tauri 2 · Svelte · Windows 10/11
+Rust · Tauri 2 · Svelte · Windows 10/11 (Linux e macOS em andamento)
 
 </div>
 
