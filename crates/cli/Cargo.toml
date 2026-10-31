@@ -1,0 +1,8 @@
+[package]
+name = "wpp-stats"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+wpp-core = { path = "../core" }

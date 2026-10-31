@@ -1,0 +1,37 @@
+# Build
+/target/
+**/target/
+node_modules/
+app/dist/
+app/src-tauri/gen/
+
+# Ferramentas de desenvolvimento, especificação e dados sintéticos
+.claude/
+CLAUDE.md
+DECISIONS.md
+.gitattributes
+crates/core/tests/
+crates/core/fuzz/
+
+# Conversas reais e relatórios nunca entram no repositório
+_chat.txt
+WhatsApp Chat*/
+Conversa do WhatsApp*/
+*.zip
+*.opus
+*.webp
+relatorio*.pdf
+resumo_por_pessoa.csv
+diario.csv
+hora_dia_semana.csv
+top10.csv
+
+# Locais
+.env
+.env.*
+*.local
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
