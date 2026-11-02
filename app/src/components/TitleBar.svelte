@@ -18,6 +18,9 @@
     }
   })();
   let maximized = $state(false);
+  // Linux (and later macOS) keep the native frame; our buttons only exist when the window is undecorated.
+  let ownControls = $state(false);
+  win?.isDecorated().then((d) => (ownControls = !d)).catch(() => {});
   $effect(() => {
     const sync = () => win?.isMaximized().then((m) => (maximized = m)).catch(() => {});
     sync();
@@ -111,11 +114,13 @@
         </div>
       {/snippet}
     </Popover>
-    <div class="win">
-      <button onclick={() => win?.minimize()} aria-label="Minimizar"><Icon icon={Minus} size={15} /></button>
-      <button onclick={() => win?.toggleMaximize()} aria-label="Maximizar"><Icon icon={maximized ? Copy : Square} size={12} /></button>
-      <button class="close" onclick={() => win?.close()} aria-label="Fechar"><Icon icon={X} size={16} /></button>
-    </div>
+    {#if ownControls}
+      <div class="win">
+        <button onclick={() => win?.minimize()} aria-label="Minimizar"><Icon icon={Minus} size={15} /></button>
+        <button onclick={() => win?.toggleMaximize()} aria-label="Maximizar"><Icon icon={maximized ? Copy : Square} size={12} /></button>
+        <button class="close" onclick={() => win?.close()} aria-label="Fechar"><Icon icon={X} size={16} /></button>
+      </div>
+    {/if}
   </div>
 </header>
 

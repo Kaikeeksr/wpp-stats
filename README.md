@@ -162,6 +162,14 @@ Toda a lógica vive no `core`. O front-end só recebe agregados de poucos KB por
 
 Requisitos: Windows 10/11, [Rust](https://rustup.rs) estável e Node.js 20+.
 
+No Linux (Ubuntu/Debian, inclusive WSL com WSLg), instale antes as bibliotecas do WebKitGTK:
+
+```bash
+sudo apt install build-essential pkg-config libwebkit2gtk-4.1-dev libgtk-3-dev librsvg2-dev libssl-dev libayatana-appindicator3-dev
+```
+
+`npm --prefix app run tauri build` gera no Linux o `.deb` e o AppImage em `target/release/bundle/`.
+
 ```bash
 npm --prefix app install
 npm --prefix app run tauri dev      # app em modo desenvolvimento

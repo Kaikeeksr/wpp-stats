@@ -268,6 +268,12 @@ fn initial_folder() -> Option<String> {
 }
 
 fn main() {
+    // WebKitGTK's DMA-BUF renderer shows a blank window on NVIDIA drivers and WSLg.
+    // Set before any thread starts; an explicit value from the user wins.
+    #[cfg(target_os = "linux")]
+    if std::env::var_os("WEBKIT_DISABLE_DMABUF_RENDERER").is_none() {
+        std::env::set_var("WEBKIT_DISABLE_DMABUF_RENDERER", "1");
+    }
     let app = App {
         pool: wpp_core::new_pool().expect("thread pool"),
         loaded: Mutex::new(None),
